@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "YueYueView.h"
+#import "D2048ViewController.h"
 
 @interface ViewController () <YueYueViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *gameView;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *to2048Button;
 
 @end
 
@@ -38,15 +40,26 @@
 {
     return arc4random() % 9;
 }
+- (IBAction)b2048ButtonPressed:(UIButton *)sender
+{
+    [self performSegueWithIdentifier:@"to2048VC" sender:self];
+}
 
 #pragma mark - YueYueView Delegate
 
 - (void)YueYueViewDidPressed:(YueYueView *)yyView
 {
     self.scoreLabel.text = [NSString stringWithFormat:@"%d",[self.scoreLabel.text integerValue] + 1];
-    YueYueView *yyView1 = [YueYueView viewWithPosition:[self randomPosition]];
-    yyView1.delegate = self;
-    [yyView1 showInView:self.gameView];
-
+    if (self.scoreLabel.text.integerValue == 5)
+    {
+        self.to2048Button.hidden = NO;
+        [self b2048ButtonPressed:nil];
+    }
+    else
+    {
+        YueYueView *yyView1 = [YueYueView viewWithPosition:[self randomPosition]];
+        yyView1.delegate = self;
+        [yyView1 showInView:self.gameView];
+    }
 }
 @end

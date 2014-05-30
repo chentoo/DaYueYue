@@ -14,7 +14,7 @@
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameBackground" id="ggz-XQ-VCT">
                                 <rect key="frame" x="0.0" y="84" width="320" height="400"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="得分：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g12-C6-oCM">
                                 <rect key="frame" x="176" y="55" width="51" height="21"/>
@@ -29,16 +29,64 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dn3-R8-eHr">
+                                <rect key="frame" x="16" y="46" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="2048">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="b2048ButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XFp-1F-0fY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="gameView" destination="ggz-XQ-VCT" id="BVN-jh-G5w"/>
                         <outlet property="scoreLabel" destination="Jys-hh-Rtz" id="UlU-Nf-Ss2"/>
+                        <outlet property="to2048Button" destination="dn3-R8-eHr" id="KRp-mj-rYC"/>
+                        <segue destination="rEJ-cq-HRm" kind="modal" identifier="to2048VC" id="u0A-E0-sks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cbS-Ug-PXc">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="rEJ-cq-HRm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UXL-tF-O1d">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1T4-Hb-6mQ" kind="relationship" relationship="rootViewController" id="B18-nF-og3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wym-cG-0wG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="-71"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j9a-Mq-isS">
+            <objects>
+                <viewController id="1T4-Hb-6mQ" customClass="D2048ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Thk-h5-Yjs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kBu-jt-Vvh">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="5e6-0U-OeW">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="1T4-Hb-6mQ" id="NtF-Vk-mM5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="143-tO-z2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1350" y="-71"/>
         </scene>
     </scenes>
     <resources>
