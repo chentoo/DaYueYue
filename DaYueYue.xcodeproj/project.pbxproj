@@ -21,6 +21,7 @@
 		7A4482AE19384FFD00DF0F2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A44829019384FFD00DF0F2A /* UIKit.framework */; };
 		7A4482B619384FFD00DF0F2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A4482B419384FFD00DF0F2A /* InfoPlist.strings */; };
 		7A4482B819384FFD00DF0F2A /* DaYueYueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4482B719384FFD00DF0F2A /* DaYueYueTests.m */; };
+		7A4482C41938506600DF0F2A /* YueYueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4482C31938506600DF0F2A /* YueYueView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		7A4482B319384FFD00DF0F2A /* DaYueYueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DaYueYueTests-Info.plist"; sourceTree = "<group>"; };
 		7A4482B519384FFD00DF0F2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A4482B719384FFD00DF0F2A /* DaYueYueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaYueYueTests.m; sourceTree = "<group>"; };
+		7A4482C21938506600DF0F2A /* YueYueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YueYueView.h; sourceTree = "<group>"; };
+		7A4482C31938506600DF0F2A /* YueYueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YueYueView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7A44829B19384FFD00DF0F2A /* AppDelegate.h */,
+				7A4482C11938504300DF0F2A /* views */,
 				7A44829C19384FFD00DF0F2A /* AppDelegate.m */,
 				7A44829E19384FFD00DF0F2A /* Main.storyboard */,
 				7A4482A119384FFD00DF0F2A /* ViewController.h */,
@@ -150,6 +154,15 @@
 				7A4482B419384FFD00DF0F2A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7A4482C11938504300DF0F2A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7A4482C21938506600DF0F2A /* YueYueView.h */,
+				7A4482C31938506600DF0F2A /* YueYueView.m */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4482C41938506600DF0F2A /* YueYueView.m in Sources */,
 				7A4482A319384FFD00DF0F2A /* ViewController.m in Sources */,
 				7A44829D19384FFD00DF0F2A /* AppDelegate.m in Sources */,
 				7A44829919384FFD00DF0F2A /* main.m in Sources */,
